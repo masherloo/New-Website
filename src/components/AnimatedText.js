@@ -30,7 +30,7 @@ const character = {
 }
 
 const AnimatedText = ({ text, className = '', swap = false }) => {
-    const words = ['RESEARCHER', 'DESIGNER', 'DEVELOPER', 'ENGINEER'];
+    const words = ['RESEARCHER', 'PROGRAMMER', 'GYMRAT', 'PIANIST'];
   
     return (
       <div className={`w-full mx-auto justify-center items-center flex py-2`}>
@@ -49,6 +49,7 @@ const AnimatedText = ({ text, className = '', swap = false }) => {
               {word}&nbsp;
             </motion.span>
           ))}
+          <br />
           {swap && (
             <motion.span className="inline-block" variants={character}>
               <WordSwapper words={words} interval={3000} delayBetweenWords={1000} />
