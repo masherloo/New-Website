@@ -4,6 +4,7 @@ import Head from "next/head";
 import React from "react";
 import Image from "next/image";
 import ProfilePic from "../../public/images/profile/Profile2.jpg";
+import ProfilePic2 from "../../public/images/profile/Profile3.jpg";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -18,7 +19,7 @@ const about = () => {
       <main className="flex w-full flex-col items-center justify-center">
         <Layout className="pt-16">
           <AnimatedText text="Explore, Persist, Transform!" className="mb-16" />
-          <div className="grid w-full grid-cols-8 gap-16">
+          <div className="grid w-full grid-cols-9 gap-12">
             <div className="col-span-3 flex flex-col items-start justify-start">
               <h2 className="mb-4 text-lg font-bold uppercase text-dark/75">
                 Biography
@@ -47,22 +48,21 @@ const about = () => {
                 manufacturing.
               </p>
             </div>
-            <div className="col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light">
-              <motion.div
-                className="relative w-full h-max rounded-2xl overflow-hidden p-2"
-                style={{ boxShadow: boxShadow }}
-                transition={{ duration: 1 }}
-                onMouseEnter={() =>
-                  setBoxShadow("10px 10px 5px 0px rgba(0, 0, 0, 1)")
-                }
-                onMouseLeave={() => setBoxShadow("")}
-              >
+            <div className="col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-6">
+            <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark" /> 
                 <Image
                   src={ProfilePic}
                   alt="Mohammadreza"
                   className="w-full h-auto rounded-2xl"
                 />
-              </motion.div>
+            </div>
+            <div className="col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-6">
+            <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark" />
+                <Image
+                  src={ProfilePic2}
+                  alt="Mohammadreza"
+                  className="w-full h-auto rounded-2xl"
+                />
             </div>
           </div>
         </Layout>
