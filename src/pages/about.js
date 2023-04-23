@@ -7,6 +7,7 @@ import ProfilePic from "../../public/images/profile/Profile2.jpg";
 import ProfilePic2 from "../../public/images/profile/Profile3.jpg";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import Skills from "@/components/Skills";
 
 const about = () => {
   const [boxShadow, setBoxShadow] = useState("");
@@ -65,6 +66,8 @@ const about = () => {
                 />
             </div>
           </div>
+
+          <Skills></Skills>
         </Layout>
       </main>
     </>
