@@ -49,7 +49,6 @@ const AnimatedText = ({ text, className = '', swap = false }) => {
               {word}&nbsp;
             </motion.span>
           ))}
-          <br />
           {swap && (
             <motion.span className="inline-block" variants={character}>
               <WordSwapper words={words} interval={3000} delayBetweenWords={1000} />

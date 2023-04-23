@@ -2,15 +2,6 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import Logo from "./Logo";
-import {
-  GithubIcon,
-  LinkedInIcon,
-  TwitterIcon,
-  InstagramIcon,
-  ScholarIcon,
-} from "./icons";
-
-import { motion } from "framer-motion";
 
 export const CustomLink = ({ href, title, className = "" }) => {
   const router = useRouter();
@@ -53,7 +44,7 @@ const NavBar = () => {
         />
       </nav>
 
-      <div className="absolute right-0 px-32 top-2">
+      <div className="absolute right-48 top-2">
         <Logo></Logo>
       </div>
     </header>

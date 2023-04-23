@@ -44,7 +44,7 @@ export default function Home() {
                   hover:text-dark border-2 border-solid border-transparent hover:border-dark"
                   download={true}
                 >
-                  Curriculum Vitae <LinkArrow className={"w-auto ml-1"} />
+                  Curriculum Vitae <LinkArrow className={"w-5 ml-1"} />
                 </Link>
                 <Link
                   href="mailto:masherloo@hawk.iit.edu"
