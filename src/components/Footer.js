@@ -12,13 +12,15 @@ import {
 const Footer = () => {
   return (
     <footer
-      className="w-full border-t-2 border-solid border-dark font-medium text-lg justify-between flex items-center px-32"
+      className="w-full border-t-2 border-solid border-dark
+      font-medium text-lg justify-between flex items-center px-32
+      sm:text-base lg:flex-col"
     >
-      <Layout className="py-8 flex items-center justify-between">
+      <Layout className="py-8 flex items-center justify-between lg:flex-col lg:py-6">
         <span>{new Date().getFullYear()} &copy; Mohammadreza Asherloo</span>
       </Layout>
 
-      <div className="py-8 flex items-center justify-between">
+      <div className="py-8 flex items-center justify-between col-auto lg:py-2">
         <motion.a
           href="https://twitter.com/MRAsherloo"
           target={"_blank"}
@@ -31,7 +33,7 @@ const Footer = () => {
             },
           }}
           whileTap={{ scale: 0.9 }}
-          className="w-6 mr-2"
+          className="w-6 mr-3 sm:mx-1"
         >
           <TwitterIcon />
         </motion.a>
@@ -47,7 +49,7 @@ const Footer = () => {
             },
           }}
           whileTap={{ scale: 0.9 }}
-          className="w-6 mx-2"
+          className="w-6 mx-3 sm:mx-1"
         >
           <GithubIcon />
         </motion.a>
@@ -63,7 +65,7 @@ const Footer = () => {
             },
           }}
           whileTap={{ scale: 0.9 }}
-          className="w-6 mx-2"
+          className="w-6 mx-3 sm:mx-1"
         >
           <LinkedInIcon />
         </motion.a>
@@ -79,7 +81,7 @@ const Footer = () => {
             },
           }}
           whileTap={{ scale: 0.9 }}
-          className="w-6 mx-2"
+          className="w-6 mx-3 sm:mx-1"
         >
           <ScholarIcon />
         </motion.a>
@@ -94,7 +96,7 @@ const Footer = () => {
               repeatType: "reverse",
             },
           }}
-          className="w-6 ml-2"
+          className="w-6 ml-3 sm:mx-1"
         >
           <InstagramIcon />
         </motion.a>

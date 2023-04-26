@@ -5,12 +5,10 @@ import React from "react";
 import Image from "next/image";
 import ProfilePic from "../../public/images/profile/Profile2.jpg";
 import ProfilePic2 from "../../public/images/profile/Profile3.jpg";
-import { motion } from "framer-motion";
-import { useState } from "react";
-import Skills from "@/components/Skills";
+import Experience from "@/components/Experience";
+import Education from "@/components/Education";
 
 const about = () => {
-  const [boxShadow, setBoxShadow] = useState("");
   return (
     <>
       <Head>
@@ -66,8 +64,8 @@ const about = () => {
                 />
             </div>
           </div>
-
-          <Skills></Skills>
+          <Experience />
+          <Education />
         </Layout>
       </main>
     </>

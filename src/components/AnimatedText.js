@@ -33,7 +33,7 @@ const AnimatedText = ({ text, className = '', swap = false }) => {
     const words = ['RESEARCHER', 'PROGRAMMER', 'GYMRAT', 'PIANIST'];
   
     return (
-      <div className={`w-full mx-auto justify-center items-center flex py-2`}>
+      <div className={`w-full mx-auto justify-center items-center flex py-2 sm:py-0`}>
         <motion.h1
           className={`${className} w-full text-8xl inline-block text-dark capitalize font-bold`}
           variants={quote}
