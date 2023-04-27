@@ -25,7 +25,7 @@ const about = () => {
                 Biography
               </h2>
               <p className="font-medium">
-                Hi, I'm Mohammadreza Asherloo, a materials scientist and
+                Hi, I&apos;m Mohammadreza Asherloo, a materials scientist and
                 additive manufacturing expert who is passionate about developing
                 cutting-edge, efficient, and sustainable solutions for various
                 industries. With over 4 years of academic experience in the
@@ -34,12 +34,12 @@ const about = () => {
               </p>
               <p className="my-4 font-medium">
                 I believe that materials science is more than just understanding
-                the properties of materials — it's about addressing complex
+                the properties of materials — it&apos;s about addressing complex
                 challenges and creating innovative solutions that drive industry
                 advancement.
               </p>
               <p className="font-medium">
-                Whether I'm working on a metal additive manufacturing project,
+                Whether I&apos;m working on a metal additive manufacturing project,
                 advanced materials research, or other groundbreaking
                 initiatives, I bring my commitment to scientific excellence and
                 sustainable practices to every endeavor I undertake. I look
