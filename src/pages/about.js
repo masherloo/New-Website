@@ -17,9 +17,10 @@ const about = () => {
       </Head>
       <main className="flex w-full flex-col items-center justify-center">
         <Layout className="pt-16">
-          <AnimatedText text="Explore, Persist, Transform!" className="mb-16" />
-          <div className="grid w-full grid-cols-9 gap-12">
-            <div className="col-span-3 flex flex-col items-start justify-start">
+          <AnimatedText text="Explore, Persist, Transform!" 
+          className="mb-16 lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8" />
+          <div className="grid w-full grid-cols-9 gap-12 sm:gap-8 xl:grid-cols-8">
+            <div className="col-span-3 flex flex-col items-start justify-start 2xl:col-span-9 md:order-1">
               <h2 className="mb-4 text-lg font-bold uppercase text-dark/75">
                 Biography
               </h2>
@@ -47,21 +48,21 @@ const about = () => {
                 manufacturing.
               </p>
             </div>
-            <div className="col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-6">
-            <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark" /> 
-                <Image
-                  src={ProfilePic}
-                  alt="Mohammadreza"
-                  className="w-full h-auto rounded-2xl"
-                />
+            <div className="col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-6 2xl:col-span-4 2xl:p-2">
+              <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark" />
+              <Image
+                src={ProfilePic}
+                alt="Mohammadreza"
+                className="w-full h-auto rounded-2xl"
+              />
             </div>
-            <div className="col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-6">
-            <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark" />
-                <Image
-                  src={ProfilePic2}
-                  alt="Mohammadreza"
-                  className="w-full h-auto rounded-2xl"
-                />
+            <div className="col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-6 2xl:col-span-4 2xl:p-2">
+              <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark" />
+              <Image
+                src={ProfilePic2}
+                alt="Mohammadreza"
+                className="w-full h-auto rounded-2xl"
+              />
             </div>
           </div>
           <Experience />

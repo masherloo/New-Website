@@ -11,7 +11,7 @@ export const CustomLink = ({ href, title, className = "" }) => {
     <Link href={href} className={`${className} relative group`}>
       {title}
       <span
-        className={`h-[1px] inline-block w-0 absolute
+        className={`h-[3px] inline-block w-0 absolute
        left-0 -bottom-0.5 bg-black group-hover:w-full
         transition-[width] ease duration-300
         ${router.pathname === href ? "w-full" : "w-0"}
@@ -20,8 +20,8 @@ export const CustomLink = ({ href, title, className = "" }) => {
         &nbsp;
       </span>
       <span
-        className={`h-0 inline-block w-[1px] absolute
-       -left-0.5 bottom-0 bg-black group-hover:h-full
+        className={`h-0 inline-block w-[3px] absolute
+       -left-1 bottom-0 bg-black group-hover:h-full
         transition-[height] ease duration-300
         ${router.pathname === href ? "h-full" : "h-0"}`}
       >
@@ -47,7 +47,7 @@ export const CustomMobileLink = ({ href, title, className = "", toggle }) => {
     >
       {title}
       <span
-        className={`h-[1px] inline-block w-0 absolute
+        className={`h-[3px] inline-block w-0 absolute
        left-0 -bottom-0.5 bg-light group-hover:w-full
         transition-[width] ease duration-300
         ${router.pathname === href ? "w-full" : "w-0"}
@@ -56,8 +56,8 @@ export const CustomMobileLink = ({ href, title, className = "", toggle }) => {
         &nbsp;
       </span>
       <span
-        className={`h-0 inline-block w-[1px] absolute
-       -left-0.5 bottom-0 bg-light group-hover:h-full
+        className={`h-0 inline-block w-[3px] absolute
+       -left-1 bottom-0 bg-light group-hover:h-full
         transition-[height] ease duration-300
         ${router.pathname === href ? "h-full" : "h-0"}`}
       >
@@ -100,14 +100,9 @@ const NavBar = () => {
 
       <div className="w-full flex justify-between items-center lg:hidden">
         <nav>
-          <CustomLink href="/" title="Home" className="mr-4" />
-          <CustomLink href="/about" title="About" className="mx-4" />
-          <CustomLink href="/projects" title="Projects" className="mx-4" />
-          <CustomLink
-            href="/publications"
-            title="Publications"
-            className="ml-4"
-          />
+          <CustomLink href="/" title="Home" className="mr-4 text-3xl" />
+          <CustomLink href="/about" title="About" className="mx-4 text-3xl" />
+          <CustomLink href="/projects" title="Projects" className="mx-4 text-3xl" />
         </nav>
       </div>
 
@@ -115,39 +110,33 @@ const NavBar = () => {
         <motion.div
         initial={{ scale:0, opacity: 0, x: "-50%", y: "-50%" }}
         animate={{ scale:1, opacity: 1 }}
-          className="min-w-[70vw] flex flex-col justify-between items-center
+          className="min-w-[40vw] flex flex-col justify-between items-center
           fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 bg-dark/90 rounded-lg backdrop-blur-md py-32"
         >
           <nav className="flex items-center flex-col justify-center">
             <CustomMobileLink
               href="/"
               title="Home"
-              className=""
+              className="text-3xl sm:text-xl"
               toggle={handleClick}
             />
             <CustomMobileLink
               href="/about"
               title="About"
-              className=""
+              className="text-3xl sm:text-xl"
               toggle={handleClick}
             />
             <CustomMobileLink
               href="/projects"
               title="Projects"
-              className=""
-              toggle={handleClick}
-            />
-            <CustomMobileLink
-              href="/publications"
-              title="Publications"
-              className=""
+              className="text-3xl sm:text-xl"
               toggle={handleClick}
             />
           </nav>
         </motion.div>
       ) : null}
 
-      <div className="absolute right-48 top-2">
+      <div className="absolute right-48 top-2 md:right-32">
         <Logo></Logo>
       </div>
     </header>

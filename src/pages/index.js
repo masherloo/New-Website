@@ -4,8 +4,6 @@ import Image from "next/image";
 import profilePic from "../../public/images/profile/Profile1.png";
 import AnimatedText from "../components/AnimatedText";
 import Link from "next/link";
-import { LinkArrow } from "../components/icons";
-import { CustomLink } from "../components/NavBar";
 
 export default function Home() {
   return (
@@ -21,10 +19,14 @@ export default function Home() {
               <Image
                 src={profilePic}
                 alt="ProfileImage"
-                className="w-full h-auto lg:hidden md:inline-block md:w-full"
+                className="w-full h-auto lg:hidden md:inline-block md:w-full md:mb-6"
+                priority
+                sizes="(max-width: 768px) 100vw,
+                (max-width: 1200px) 50vw,
+                50vw"
               ></Image>
             </div>
-            <div className="w-2/5 flex flex-col items-center self-center lg:w-full lg:text-center">
+            <div className="w-1/2 flex flex-col items-center self-center lg:w-full lg:text-center">
               <AnimatedText
                 text="THIS IS MOHAMMADREZA, A"
                 className="!text-6xl !text-left 2xl:!text-5xl xl:!text-5xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-3xl"
