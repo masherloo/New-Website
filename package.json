@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build && next-on-netlify",
     "start": "next start",
-    "lint": "next lint",
-    "postbuild": "next-on-netlify"
+    "lint": "next lint"
   },
   "dependencies": {
     "eslint": "8.36.0",
