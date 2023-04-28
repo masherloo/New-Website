@@ -7,6 +7,7 @@ import ProfilePic from "../../public/images/profile/Profile2.jpg";
 import ProfilePic2 from "../../public/images/profile/Profile3.jpg";
 import Experience from "@/components/Experience";
 import Education from "@/components/Education";
+import TransitionEffect from "@/components/TransitionEffect";
 
 const about = () => {
   return (
@@ -15,6 +16,7 @@ const about = () => {
         <title>Mohammadreza Asherloo | About Page</title>
         <meta name="description" content=";lkj;lkj" />
       </Head>
+      <TransitionEffect />
       <main className="flex w-full flex-col items-center justify-center">
         <Layout className="pt-16">
           <AnimatedText text="Explore, Persist, Transform!" 
@@ -54,6 +56,10 @@ const about = () => {
                 src={ProfilePic}
                 alt="Mohammadreza"
                 className="w-full h-auto rounded-2xl"
+                priority = {true}
+                sizes="(max-width: 768px) 100vw,
+                (max-width: 1200px) 50vw,
+                33vw"
               />
             </div>
             <div className="col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-6 2xl:col-span-4 2xl:p-2">

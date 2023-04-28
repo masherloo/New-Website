@@ -9,6 +9,7 @@ import project1 from "../../public/images/projects/project-1.jpg";
 import project2 from "../../public/images/projects/project-2.jpg";
 import project3 from "../../public/images/projects/project-3.jpg";
 import project4 from "../../public/images/projects/project-4.jpg";
+import TransitionEffect from "@/components/TransitionEffect.js";
 
 const FeaturedProject = ({ type, title, summary, img, lnk, scholar }) => {
   return (
@@ -79,6 +80,10 @@ const Project = ({ type, title, img, lnk, scholar }) => {
           src={img}
           alt={title}
           className="w-full h-auto border rounded-lg"
+          priority = {true}
+          sizes="(max-width: 768px) 100vw,
+          (max-width: 1200px) 50vw,
+          50vw"
         />
       </Link>
       <div className="w-full flex flex-col items-start justify-between mt-4">
@@ -115,6 +120,7 @@ const projects = () => {
         <title>Mohammadreza Asherloo | Project Page</title>
         <meta name="description" content=";lkj;lkj" />
       </Head>
+      <TransitionEffect />
       <main className="w-full mb-16 flex flex-col items-center justify-center">
         <Layout className="pt-16">
           <AmimatedText text="Creativity conquers wisdom!" className="mb-16 lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8" />
