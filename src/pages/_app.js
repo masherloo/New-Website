@@ -5,6 +5,8 @@ import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
+import LoadingPage from "../components/LoadingPage";
+import { useState, useEffect } from "react";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -13,20 +15,37 @@ const montserrat = Montserrat({
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 5000); // Change the duration of the loading page here (in milliseconds)
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
+
   return (
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${montserrat.variable} font-mont bg-light w-full min-h-screen`}>
-        <NavBar />
-        <AnimatePresence mode="wait">
-          <Component key={router.asPath} {...pageProps} />
-        </AnimatePresence>        
-        <Footer />
-      </main>
+      <LoadingPage show={loading} />
+      {!loading && (
+        <main
+          className={`${montserrat.variable} font-mont bg-light w-full min-h-screen`}
+        >
+          <NavBar />
+          <AnimatePresence mode="wait">
+            <Component key={router.asPath} {...pageProps} />
+          </AnimatePresence>
+          <Footer />
+        </main>
+      )}
     </>
   );
 }
-

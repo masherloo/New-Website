@@ -6,6 +6,7 @@ import AnimatedText from "../components/AnimatedText";
 import Link from "next/link";
 import TransitionEffect from "../components/TransitionEffect";
 
+
 export default function Home() {
   return (
     <>
