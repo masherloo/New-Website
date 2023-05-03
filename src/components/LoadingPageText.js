@@ -43,16 +43,13 @@ const LoadingPageText = ({ text, className = "" }) => {
         animate="animate"
       >
         {text.split(" ").map((word, index) => (
-          <AnimatePresence>
             <motion.span
               key={word + "-" + index}
               className="inline-block"
               variants={character}
-              exit= {{ opacity: 0 }}
             >
               {word}&nbsp;
             </motion.span>
-          </AnimatePresence>
         ))}
       </motion.h1>
     </div>
