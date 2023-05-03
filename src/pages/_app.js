@@ -21,7 +21,7 @@ export default function App({ Component, pageProps }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 5000); // Change the duration of the loading page here (in milliseconds)
+    }, 8750); // Change the duration of the loading page here (in milliseconds)
 
     return () => {
       clearTimeout(timer);

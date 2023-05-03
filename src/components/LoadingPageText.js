@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 const quote = {
   initial: {
@@ -21,37 +21,38 @@ const character = {
     y: 50,
   },
   animate: {
-    opacity: 1,
-    scale: [1, 2, 2, 1, 1],
-    rotate: [0, 0, 360, 360, 0],
+    opacity: [0, 0.5, 1, 1, 1, 1, 0],
+    scale: [1, 1.5, 2, 1, 0.5],
+    rotate: [0, 0, 0, 0, 360],
     y: 0,
     transition: {
-      duration: 3,
+      duration: 8,
     },
   },
 };
 
 const LoadingPageText = ({ text, className = "" }) => {
-  const words = ["RESEARCHER", "PROGRAMMER", "GYMRAT", "PIANIST"];
-
   return (
     <div
       className={`w-full mx-auto justify-between items-center flex py-2 sm:py-0`}
     >
       <motion.h1
-        className={`${className} w-full text-8xl inline-block text-dark capitalize font-bold text-center`}
+        className={`${className} w-full text-8xl inline-block text-dark capitalize text-center`}
         variants={quote}
         initial="initial"
         animate="animate"
       >
         {text.split(" ").map((word, index) => (
-          <motion.span
-            key={word + "-" + index}
-            className="inline-block"
-            variants={character}
-          >
-            {word}&nbsp;
-          </motion.span>
+          <AnimatePresence>
+            <motion.span
+              key={word + "-" + index}
+              className="inline-block"
+              variants={character}
+              exit= {{ opacity: 0 }}
+            >
+              {word}&nbsp;
+            </motion.span>
+          </AnimatePresence>
         ))}
       </motion.h1>
     </div>

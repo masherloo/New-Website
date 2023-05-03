@@ -31,14 +31,18 @@ export default function Home() {
             </div>
             <div className="w-1/2 flex flex-col items-center self-center lg:w-full lg:text-center">
               <AnimatedText
-                text="THIS IS MOHAMMADREZA, A"
+                text="THIS IS MOHAMMADREZA,"
+                className="!text-6xl !text-left !py-0 2xl:!text-5xl xl:!text-5xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-3xl"
+                swap={false}
+              ></AnimatedText>
+              <AnimatedText
+                text="A"
                 className="!text-6xl !text-left 2xl:!text-5xl xl:!text-5xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-3xl"
                 swap={true}
               ></AnimatedText>
               <p className="my-4 font-medium text-lg md:text-sm sm:text-xs">
                 I am a PhD candidate in Materials Science and Engineering at
-                Illinois Institute of Technology, working on 3D printing of
-                metals.
+                Illinois Institute of Technology, working on Additive Manufacturing of titanium, nickel, and iron superalloys.
               </p>
               <div className="flex items-center self-start mt-2 lg:self-center">
                 <Link
