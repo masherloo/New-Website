@@ -68,7 +68,7 @@ const Education = () => {
           />
           <Details
             type="Bachelor of Science in Materials Science and Engineering"
-            place={"Illinois Institute of Technology"}
+            place={"K.N. Toosi University of Technology"}
             time={"2015 - 2019"}
             info={
               "Obtaining a Bachelor's degree in Materials Science and Engineering, I gained a solid understanding of fundamental materials concepts, laying the groundwork for my passion in exploring and developing advanced materials to address complex engineering challenges."

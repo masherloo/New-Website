@@ -142,7 +142,7 @@ const NavBar = () => {
         </motion.div>
       ) : null}
 
-      <div className="absolute right-48 top-2 md:right-32">
+      <div className="absolute right-20 md:right-8 sm:right-4">
         <Logo></Logo>
       </div>
     </header>
