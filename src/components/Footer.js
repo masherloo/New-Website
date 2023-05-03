@@ -14,13 +14,13 @@ const Footer = () => {
     <footer
       className="w-full border-t-2 border-solid border-dark
       font-medium text-lg justify-between flex items-center px-32
-      sm:text-base lg:flex-col"
+      sm:text-base lg:flex-col z-10"
     >
-      <Layout className="py-8 flex items-center justify-between lg:flex-col lg:py-6">
+      <Layout className="left-0 py-8 flex items-center justify-between lg:flex-col lg:py-6">
         <span>{new Date().getFullYear()} &copy; Mohammadreza Asherloo</span>
       </Layout>
 
-      <div className="py-8 flex items-center justify-between col-auto lg:py-2">
+      <div className="py-8 z-10 flex items-center justify-between col-auto lg:py-2">
         <motion.a
           href="https://twitter.com/MRAsherloo"
           target={"_blank"}

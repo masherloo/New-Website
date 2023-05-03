@@ -5,7 +5,7 @@ const LoadingPage = ({ show }) => {
   const displayClass = show ? "opacity-100" : "opacity-0";
   return (
     <div
-      className={`fixed inset-0 z-50 flex items-center justify-center bg-white transition-opacity duration-500 ${displayClass}`}
+      className={`fixed inset-0 flex items-center justify-center bg-white transition-opacity duration-500 ${displayClass}`}
     >
       <LoadingPageText
         text="A S H E R L O O"
