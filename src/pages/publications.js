@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import Head from 'next/head'
 import TransitionEffect from '@/components/TransitionEffect'
 import Layout from '@/components/Layout'
@@ -6,6 +6,34 @@ import AnimatedText from '@/components/AnimatedText'
 import Articles from '@/components/Articles'
 import Link from 'next/link'
 import { LinkArrow } from '@/components/icons'
+import { useMotionValue, useSpring, useInView } from 'framer-motion'
+
+const Numbers = ({value}) => {
+  const ref = useRef(null)
+  const motionValue = useMotionValue(0);
+  const springValue = useSpring(motionValue, {duration: 3000});
+  const isInView = useInView(ref, {once: true});
+
+useEffect(() => {
+  if(isInView){
+    motionValue.set(value)
+  }
+},[isInView, value, motionValue])
+
+useEffect(() => {
+  springValue.on("change", (latest) => {
+    if(ref.current && latest.toFixed(0) <= value){
+      ref.current.textContent = latest.toFixed(0)
+    }
+  })
+},[springValue, value])
+
+  return (
+    <span ref={ref}>
+
+    </span>
+  )
+}
 
 const Publications = () => {
   return (
@@ -26,6 +54,20 @@ const Publications = () => {
                 >
                   Google Scholar <LinkArrow className="!w-[3rem] !h-auto md:!w-[2rem]"/>
                 </Link>
+                <div className='mt-16 px-32 flex items-center justify-between'>
+                  <div className='flex flex-col items-center justify-center'>
+                    <span className='inline-block text-7xl font-semibold'>
+                      <Numbers value={9} />+
+                    </span>
+                    <h2 className='text-xl font-medium capitalize text-dark/75'>Publications</h2>
+                  </div>
+                  <div className='flex flex-col items-center justify-center'>
+                    <span className='inline-block text-7xl font-semibold'>
+                    <Numbers value={120} />+
+                    </span>
+                    <h2 className='text-xl font-medium capitalize text-dark/75'>Citations</h2>
+                  </div>
+                </div>
                 <Articles />
             </Layout>
         </main>
