@@ -22,9 +22,9 @@ const Publications = () => {
                   href="https://scholar.google.com/citations?hl=en&user=6pqd4fAAAAAJ"
                   target={"_blank"}
                   className="flex w-full items-center justify-center mb-4 text-4xl font-light capitalize text-primary hover:underline underline-offset-4 hover:font-semibold
-                  md:text-base"
+                  md:text-2xl"
                 >
-                  Google Scholar <LinkArrow className="!w-[3rem] !h-auto"/>
+                  Google Scholar <LinkArrow className="!w-[3rem] !h-auto md:!w-[2rem]"/>
                 </Link>
                 <Articles />
             </Layout>
