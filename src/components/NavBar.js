@@ -11,7 +11,7 @@ export const CustomLink = ({ href, title, className = "" }) => {
     <Link href={href} className={`${className} relative group`}>
       {title}
       <span
-        className={`h-[3px] inline-block w-0 absolute
+        className={`h-[1px] inline-block w-0 absolute
        left-0 -bottom-0.5 bg-black group-hover:w-full
         transition-[width] ease duration-300
         ${router.pathname === href ? "w-full" : "w-0"}
@@ -20,7 +20,7 @@ export const CustomLink = ({ href, title, className = "" }) => {
         &nbsp;
       </span>
       <span
-        className={`h-0 inline-block w-[3px] absolute
+        className={`h-0 inline-block w-[1px] absolute
        -left-1 bottom-0 bg-black group-hover:h-full
         transition-[height] ease duration-300
         ${router.pathname === href ? "h-full" : "h-0"}`}
@@ -47,7 +47,7 @@ export const CustomMobileLink = ({ href, title, className = "", toggle }) => {
     >
       {title}
       <span
-        className={`h-[3px] inline-block w-0 absolute
+        className={`h-[1px] inline-block w-0 absolute
        left-0 -bottom-0.5 bg-light group-hover:w-full
         transition-[width] ease duration-300
         ${router.pathname === href ? "w-full" : "w-0"}
@@ -56,7 +56,7 @@ export const CustomMobileLink = ({ href, title, className = "", toggle }) => {
         &nbsp;
       </span>
       <span
-        className={`h-0 inline-block w-[3px] absolute
+        className={`h-0 inline-block w-[1px] absolute
        -left-1 bottom-0 bg-light group-hover:h-full
         transition-[height] ease duration-300
         ${router.pathname === href ? "h-full" : "h-0"}`}
@@ -102,13 +102,14 @@ const NavBar = () => {
 
       <div className="w-full flex justify-between items-center lg:hidden">
         <nav>
-          <CustomLink href="/" title="Home" className="mr-4 text-3xl" />
-          <CustomLink href="/about" title="About" className="mx-4 text-3xl" />
+          <CustomLink href="/" title="Home" className="mr-4 text-2xl font-light" />
+          <CustomLink href="/about" title="About" className="mx-4 text-2xl font-light" />
           <CustomLink
             href="/projects"
             title="Projects"
-            className="mx-4 text-3xl"
+            className="mx-4 text-2xl font-light"
           />
+          <CustomLink href="/publications" title="Publications" className="mx-4 text-2xl font-light" />
         </nav>
       </div>
 
@@ -135,6 +136,12 @@ const NavBar = () => {
             <CustomMobileLink
               href="/projects"
               title="Projects"
+              className="text-3xl sm:text-xl"
+              toggle={handleClick}
+            />
+            <CustomMobileLink
+              href="/publications"
+              title="Publications"
               className="text-3xl sm:text-xl"
               toggle={handleClick}
             />

@@ -18,15 +18,15 @@ const character = {
   initial: {
     opacity: 0,
     scale: 1,
-    y: 50,
+    y: 150,
   },
   animate: {
     opacity: [0, 0.5, 1, 1, 1, 1, 0],
-    scale: [1, 1.5, 2, 1, 0.5],
+    scale: [1, 1.25, 1.75, 1, 0.5],
     rotate: [0, 0, 0, 0, 360],
     y: 0,
     transition: {
-      duration: 8,
+      duration: 4,
     },
   },
 };
