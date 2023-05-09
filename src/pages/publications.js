@@ -54,15 +54,15 @@ const Publications = () => {
                 >
                   Google Scholar <LinkArrow className="!w-[3rem] !h-auto md:!w-[2rem]"/>
                 </Link>
-                <div className='mt-16 px-32 flex items-center justify-between'>
-                  <div className='flex flex-col items-center justify-center'>
-                    <span className='inline-block text-7xl font-semibold'>
+                <div className='mt-16 flex items-center justify-between'>
+                  <div className='flex flex-col items-center justify-center ml-64 lg:ml-32 md:ml-16 sm:ml-8'>
+                    <span className='inline-block text-9xl font-semibold xl:text-7xl md:text-5xl'>
                       <Numbers value={9} />+
                     </span>
                     <h2 className='text-xl font-medium capitalize text-dark/75'>Publications</h2>
                   </div>
-                  <div className='flex flex-col items-center justify-center'>
-                    <span className='inline-block text-7xl font-semibold'>
+                  <div className='flex flex-col items-center justify-center mr-64 lg:mr-32 md:mr-16 sm:mr-8'>
+                    <span className='inline-block text-9xl font-semibold xl:text-7xl md:text-5xl'>
                     <Numbers value={120} />+
                     </span>
                     <h2 className='text-xl font-medium capitalize text-dark/75'>Citations</h2>
