@@ -115,7 +115,7 @@ const NavBar = () => {
 
       {isOpen ? (
         <motion.div
-          initial={{ scale: 0, opacity: 0, x:-500 }}
+          initial={{ scale: 0, opacity: 0, x:-500, y: "-50%" }}
           animate={{ scale: 1, opacity: 1, x: "-50%" }}
           transition={{ duration: 1, type: "spring" }}
           className="min-w-[40vw] flex flex-col justify-between items-center
@@ -150,7 +150,7 @@ const NavBar = () => {
         </motion.div>
       ) : (
         <motion.div
-          initial={{ scale: 1, opacity: 1, x:"-50%" }}
+          initial={{ scale: 1, opacity: 1, x:"-50%", y: "-50%" }}
           animate={{ scale: 0, opacity: 0, x: -500 }}
           transition={{ duration: 1, type: "spring" }}
           className="min-w-[40vw] flex flex-col justify-between items-center
