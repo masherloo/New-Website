@@ -115,8 +115,9 @@ const NavBar = () => {
 
       {isOpen ? (
         <motion.div
-          initial={{ scale: 0, opacity: 0, x: "-50%", y: "-50%" }}
-          animate={{ scale: 1, opacity: 1 }}
+          initial={{ scale: 0, opacity: 0, x:-500 }}
+          animate={{ scale: 1, opacity: 1, x: "-50%" }}
+          transition={{ duration: 1, type: "spring" }}
           className="min-w-[40vw] flex flex-col justify-between items-center
           fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-dark/90 rounded-lg backdrop-blur-md py-32 z-50"
         >
@@ -147,7 +148,15 @@ const NavBar = () => {
             />
           </nav>
         </motion.div>
-      ) : null}
+      ) : (
+        <motion.div
+          initial={{ scale: 1, opacity: 1, x:"-50%" }}
+          animate={{ scale: 0, opacity: 0, x: -500 }}
+          transition={{ duration: 1, type: "spring" }}
+          className="min-w-[40vw] flex flex-col justify-between items-center
+          fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-dark/90 rounded-lg backdrop-blur-md py-32 z-50"
+        ></motion.div>
+      )}
 
       <div className="absolute right-20 md:right-8 sm:right-4">
         <Logo></Logo>

@@ -10,6 +10,7 @@ import project2 from "../../public/images/projects/project-2.jpg";
 import project3 from "../../public/images/projects/project-3.jpg";
 import project4 from "../../public/images/projects/project-4.jpg";
 import TransitionEffect from "@/components/TransitionEffect.js";
+import { motion } from "framer-motion";
 
 const FeaturedProject = ({ type, title, summary, img, lnk, scholar }) => {
   return (
@@ -125,7 +126,11 @@ const projects = () => {
         <Layout className="pt-16">
           <AmimatedText text="Creativity means everything!" className="mb-16 lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8" />
           <div className="grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0">
-            <div className="col-span-12">
+            <motion.div
+            initial={{ x: 500 }}
+            whileInView={{ x: 0 }}
+            transition={{ duration: 1, type: "spring" }}
+            className="col-span-12">
               <FeaturedProject
                 title="LPBF of Cost-Effective Non-Spherical Ti-6Al-4V"
                 summary="Optimization of LPBF process for the cost-efficient non-spherical Ti-6Al-4V powder to produce >99.9% dense parts."
@@ -134,8 +139,12 @@ const projects = () => {
                 type="Journal Article"
                 img={project1}
               />
-            </div>
-            <div className="col-span-6 sm:col-span-12">
+            </motion.div>
+            <motion.div
+            initial={{ y: 500 }}
+            whileInView={{ y: 0 }}
+            transition={{ duration: 1, type: "spring" }}
+            className="col-span-6 sm:col-span-12">
             <Project
                 title="Fatigue of Ti-6Al-4V"
                 lnk="https://www.sciencedirect.com/science/article/abs/pii/S2214860422005061"
@@ -143,8 +152,12 @@ const projects = () => {
                 type="Journal Article"
                 img={project2}
               />
-            </div>
-            <div className="col-span-6 sm:col-span-12">
+            </motion.div>
+            <motion.div
+            initial={{ y: 500 }}
+            whileInView={{ y: 0 }}
+            transition={{ duration: 1, type: "spring" }}
+            className="col-span-6 sm:col-span-12">
             <Project
                 title="Microstructure of Ti-6Al-4V"
                 lnk="https://www.sciencedirect.com/science/article/abs/pii/S1044580323001146"
@@ -152,8 +165,12 @@ const projects = () => {
                 type="Journal Article"
                 img={project3}
               />
-            </div>
-            <div className="col-span-12">
+            </motion.div>
+            <motion.div
+            initial={{ y: 500 }}
+            whileInView={{ y: 0 }}
+            transition={{ duration: 1, type: "spring" }}
+            className="col-span-12">
               <FeaturedProject
                 title="Binder Jetting of Ultra-fine SS316L"
                 summary="Optimization of BJP process for the ultra-fine SS316L powder to produce >99% dense parts."
@@ -162,7 +179,7 @@ const projects = () => {
                 type="Journal Article"
                 img={project4}
               />
-            </div>
+            </motion.div>
           </div>
         </Layout>
       </main>
