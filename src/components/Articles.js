@@ -28,7 +28,7 @@ const Details = ({ authors, title, year, doi }) => {
 
 const YearIcon = ({ year }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref);
   return (
     <>
       <div
@@ -38,7 +38,7 @@ const YearIcon = ({ year }) => {
           opacity: isInView ? 1 : 0,
           transition: "all 1s ease-in-out"
         }}
-        className="w-full text-right mt-0 text-7xl xl:text-7xl md:text-5xl sm:text-3xl xs:text-xl font-medium"
+        className="w-full text-right mt-0 text-7xl xl:text-7xl md:text-5xl sm:text-3xl font-medium"
       >
         {year}
       </div>
@@ -49,7 +49,7 @@ const YearIcon = ({ year }) => {
         opacity: isInView ? 1 : 0,
         transition: "all 1s ease-in-out",
       }}
-       className="h-[3px] bg-black ml-24 mb-8 float-right"></span>
+       className="h-[3px] bg-black ml-24 md:ml-16 sm:ml-8 mb-8 float-right"></span>
     </>
   );
 };
