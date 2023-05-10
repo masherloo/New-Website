@@ -59,13 +59,13 @@ const Publications = () => {
                     <span className='inline-block text-9xl font-semibold xl:text-7xl md:text-5xl'>
                       <Numbers value={9} />+
                     </span>
-                    <h2 className='text-xl font-medium capitalize text-dark/75'>Publications</h2>
+                    <h2 className='text-5xl xl:text-3xl md:text-1xl font-medium capitalize text-dark/75'>Publications</h2>
                   </div>
                   <div className='flex flex-col items-center justify-center mr-64 lg:mr-32 md:mr-16 sm:mr-8'>
                     <span className='inline-block text-9xl font-semibold xl:text-7xl md:text-5xl'>
                     <Numbers value={120} />+
                     </span>
-                    <h2 className='text-xl font-medium capitalize text-dark/75'>Citations</h2>
+                    <h2 className='text-5xl xl:text-3xl md:text-1xl font-medium capitalize text-dark/75'>Citations</h2>
                   </div>
                 </div>
                 <Articles />

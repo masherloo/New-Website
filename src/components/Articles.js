@@ -28,15 +28,16 @@ const Details = ({ authors, title, year, doi }) => {
 
 const YearIcon = ({ year }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref);
+  const isInView = useInView(ref, { once: true });
+  const scrollYProgress = useScroll(ref);
   return (
     <>
       <div
         ref={ref}
         style={{
-          transform: isInView ? "none" : "translateX(500px)",
+          transform: isInView ? "none" : "translateX(1000px)",
           opacity: isInView ? 1 : 0,
-          transition: "all 1s ease-in-out"
+          transition: "all 2s ease-in-out"
         }}
         className="w-full text-right mt-0 text-7xl xl:text-7xl md:text-5xl sm:text-3xl font-medium"
       >
@@ -47,7 +48,7 @@ const YearIcon = ({ year }) => {
       style={{
         width: isInView ? "89%" : "0",
         opacity: isInView ? 1 : 0,
-        transition: "all 1s ease-in-out",
+        transition: "all 2s ease-in-out",
       }}
        className="h-[3px] bg-black ml-24 md:ml-16 sm:ml-8 mb-8 float-right"></span>
     </>
