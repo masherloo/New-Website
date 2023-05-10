@@ -11,17 +11,23 @@ const Details = ({ authors, title, year, doi }) => {
       className="my-4 first:mt-0 last:mb-0 w-[80%] mx-auto md:w-[80%]"
     >
       <LiIcon reference={ref} />
-      <span className="font-semibold text-xl text-dark italic xs:text-lg">
-        {title}
-      </span>
-      <h3 className="font-medium text-dark/75 text-lg xs:text-sm">
-        {`${authors}`} | {`${year}`}
-      </h3>
-      <Link
-        href={`${doi}`}
-        target="_blank"
-        className="cursor-pointer rounded-lg lg:w-full hover:underline underline-offset-3 text-primary text-lg xs:text-sm"
-      >{`${doi}`}</Link>
+      <motion.div
+        initial={{ y: 100 }}
+        whileInView={{ y: 0 }}
+        transition={{ duration: 1, type: "spring" }}
+      >
+        <span className="font-semibold text-xl text-dark italic xs:text-lg">
+          {title}
+        </span>
+        <h3 className="font-medium text-dark/75 text-lg xs:text-sm">
+          {`${authors}`} | {`${year}`}
+        </h3>
+        <Link
+          href={`${doi}`}
+          target="_blank"
+          className="cursor-pointer rounded-lg lg:w-full hover:underline underline-offset-3 text-primary text-lg xs:text-sm"
+        >{`${doi}`}</Link>
+      </motion.div>
     </li>
   );
 };
@@ -37,7 +43,7 @@ const YearIcon = ({ year }) => {
         style={{
           transform: isInView ? "none" : "translateX(1000px)",
           opacity: isInView ? 1 : 0,
-          transition: "all 2s ease-in-out"
+          transition: "all 1s ease-in-out"
         }}
         className="w-full text-right mt-0 text-7xl xl:text-7xl md:text-5xl sm:text-3xl font-medium"
       >
@@ -48,9 +54,9 @@ const YearIcon = ({ year }) => {
       style={{
         width: isInView ? "89%" : "0",
         opacity: isInView ? 1 : 0,
-        transition: "all 2s ease-in-out",
+        transition: "all 1s ease-in-out",
       }}
-       className="h-[3px] bg-black ml-24 md:ml-16 sm:ml-8 mb-8 float-right"></span>
+       className="h-[3px] bg-black ml-24 mb-8 float-right"></span>
     </>
   );
 };
