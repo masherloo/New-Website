@@ -11,7 +11,7 @@ import { useMotionValue, useSpring, useInView } from 'framer-motion'
 const Numbers = ({value}) => {
   const ref = useRef(null)
   const motionValue = useMotionValue(0);
-  const springValue = useSpring(motionValue, {duration: 3000});
+  const springValue = useSpring(motionValue, {duration: 8000});
   const isInView = useInView(ref, {once: true});
 
 useEffect(() => {

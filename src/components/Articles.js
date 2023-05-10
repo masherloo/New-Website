@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import Link from "next/link";
-import { motion, useScroll } from "framer-motion";
+import { motion, useScroll, useInView } from "framer-motion";
 import LiIcon from "./LiIcon";
 
 const Details = ({ authors, title, year, doi }) => {
@@ -11,10 +11,10 @@ const Details = ({ authors, title, year, doi }) => {
       className="my-4 first:mt-0 last:mb-0 w-[80%] mx-auto md:w-[80%]"
     >
       <LiIcon reference={ref} />
-      <span className="font-bold text-xl text-dark/75 italic xs:text-lg">
+      <span className="font-semibold text-xl text-dark italic xs:text-lg">
         {title}
       </span>
-      <h3 className="font-medium text-lg xs:text-sm">
+      <h3 className="font-medium text-dark/75 text-lg xs:text-sm">
         {`${authors}`} | {`${year}`}
       </h3>
       <Link
@@ -26,11 +26,38 @@ const Details = ({ authors, title, year, doi }) => {
   );
 };
 
+const YearIcon = ({ year }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  return (
+    <>
+      <div
+        ref={ref}
+        style={{
+          transform: isInView ? "none" : "translateX(500px)",
+          opacity: isInView ? 1 : 0,
+          transition: "all 1s ease-in-out"
+        }}
+        className="w-full text-right mt-0 text-7xl xl:text-7xl md:text-5xl sm:text-3xl xs:text-xl font-medium"
+      >
+        {year}
+      </div>
+      <span
+      ref={ref}
+      style={{
+        width: isInView ? "89%" : "0",
+        opacity: isInView ? 1 : 0,
+        transition: "all 1s ease-in-out",
+      }}
+       className="h-[3px] bg-black ml-24 mb-8 float-right"></span>
+    </>
+  );
+};
+
 const Articles = () => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "center start"],
   });
   return (
     <div className="mb-64 mt-24">
@@ -41,6 +68,7 @@ const Articles = () => {
             className="absolute left-9 top-0 w-[4px] h-full bg-dark origin-top
           md:w-[2px] md:left-[30px] xs:left-[20px]"
           />
+
           <Details
             authors="Asherloo et al."
             title={
@@ -65,6 +93,7 @@ const Articles = () => {
             year={"2023"}
             doi="https://doi.org/10.3390/ma16062267"
           />
+          <YearIcon year={"2023"} />
           <Details
             authors="Jamalkhani et al."
             title={
@@ -97,6 +126,7 @@ const Articles = () => {
             year={"2022"}
             doi="https://doi.org/10.1016/j.cossms.2021.100974"
           />
+          <YearIcon year={"2022"} />
           <Details
             authors="Wu et al."
             title={
@@ -105,6 +135,7 @@ const Articles = () => {
             year={"2021"}
             doi="https://doi.org/10.1016/j.addma.2021.102323"
           />
+          <YearIcon year={"2021"} />
         </ul>
       </div>
     </div>
