@@ -8,6 +8,7 @@ import ProfilePic2 from "../../public/images/profile/Profile3.jpg";
 import Experience from "@/components/Experience";
 import Education from "@/components/Education";
 import TransitionEffect from "@/components/TransitionEffect";
+import Skills from "@/components/Skills";
 
 const about = () => {
   return (
@@ -71,6 +72,7 @@ const about = () => {
               />
             </div>
           </div>
+          <Skills />
           <Experience />
           <Education />
         </Layout>

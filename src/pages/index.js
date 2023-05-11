@@ -16,7 +16,7 @@ export default function Home() {
       </Head>
       <TransitionEffect />
       <main className="flex items-center text-dark w-full min-h-screen">
-        <Layout className="pt-16">
+        <Layout className="pt-0">
           <div className="flex w-full justify-between items-center lg:flex-col">
             <div className="w-1/2 md:w-full">
               <Image
