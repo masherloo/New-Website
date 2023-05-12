@@ -6,7 +6,7 @@ const Skills = () => {
   return (
     <motion.div
       className="flex relative flex-col text-center max-w-[2000px] min-h-screen
-    justify-center items-center my-64"
+    justify-center items-center my-32"
     >
       <h2
         className="font-bold text-8xl mb-16 w-full text-center

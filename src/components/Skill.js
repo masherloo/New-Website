@@ -7,8 +7,8 @@ const Skill = ({ directionLeft, source, type, list }) => {
       initial={{ x: directionLeft ? -200 : 200, opacity: 0 }}
       transition={{ duration: 0.5 }}
       whileInView={{ x: 0, opacity: 1 }}
-      className="-z-9 w-full items-center justify-center rounded-br-2xl
-      rounded-3xl border border-solid border-dark bg-light shadow-2xl
+      className="w-full items-center justify-center
+      rounded-[4.5rem] border border-solid border-dark bg-light shadow-2xl
       p-12 relative lg:flex-col lg:p-8 xs:rounded-2xl xs:rounded-br-3xl xs:p-4 lg:w-full"
     >
       <div className="flex flex-row w-full items-center justify-between">

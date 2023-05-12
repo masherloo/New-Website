@@ -9,6 +9,7 @@ import Experience from "@/components/Experience";
 import Education from "@/components/Education";
 import TransitionEffect from "@/components/TransitionEffect";
 import Skills from "@/components/Skills";
+import { motion } from "framer-motion";
 
 const about = () => {
   return (
@@ -51,8 +52,11 @@ const about = () => {
                 manufacturing.
               </p>
             </div>
-            <div className="col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-6 2xl:col-span-4 2xl:p-2">
-              <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark" />
+            <motion.div
+            initial={{ x: -500, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1, type: "spring"}}
+            className="col-span-3 items-center justify-between relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-6 2xl:col-span-4 2xl:p-2">
               <Image
                 src={ProfilePic}
                 alt="Mohammadreza"
@@ -62,15 +66,22 @@ const about = () => {
                 (max-width: 1200px) 50vw,
                 33vw"
               />
-            </div>
-            <div className="col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-6 2xl:col-span-4 2xl:p-2">
-              <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark" />
+            </motion.div>
+            <motion.div
+            initial={{ x: 500, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1, delay: 0.2, type: "spring"}}
+            className="col-span-3 items-center justify-between relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-6 2xl:col-span-4 2xl:p-2">
               <Image
                 src={ProfilePic2}
                 alt="Mohammadreza"
                 className="w-full h-auto rounded-2xl"
+                priority = {true}
+                sizes="(max-width: 768px) 100vw,
+                (max-width: 1200px) 50vw,
+                33vw"
               />
-            </div>
+            </motion.div>
           </div>
           <Skills />
           <Experience />
